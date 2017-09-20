@@ -6,6 +6,20 @@
 
 var makeChange = function(price, payment) {
   // Your Code Here
+  let changeLeft = Math.round(100*payment - 100*price);
+  if (changeLeft <= 0) {return [0,0,0,0];
+} else {
+console.log(change);
+const quarters = Math.floor(change / 25);  
+change = change % 25;
+const dimes = Math.floor(change / 10);  
+change = change % 10;
+const nickels = Math.floor(change / 5);  
+change = change % 5;
+
+}
+  var changeLeft = [], quantity;
+
 };
 
 /// DO NOT EDIT BELOW THIS LINE ///

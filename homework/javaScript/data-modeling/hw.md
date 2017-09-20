@@ -60,13 +60,17 @@ track of whether tasks have been completed, it will also keep track of
 how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
-> Answer here
+> const projects = function (completed, time) {
+  console.log(completed, time);
+}
 
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
-> Answer here
+> const albums = function (photos) {
+  console.log(photos);
+}
 
 ### 3. Home Automation Manager
 
