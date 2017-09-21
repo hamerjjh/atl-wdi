@@ -2,13 +2,16 @@
 /* packages */
 var express     = require('express');
 var hbs         = require('hbs');
+const methodOverride = require('method-override');
 /* app settings*/
 var app         = express();
 var port        = process.env.PORT || 3002;
 const bodyParser = require('body-parser');
 const pirateController = require('./controllers/pirates.js');
 
+
 /*log*/
+app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

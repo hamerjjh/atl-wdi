@@ -29,6 +29,7 @@ router.get('/', (req,res) => {
     }
   });
 
+  /*CREATE TODOS */
 router.post('/', (req, res) => {
     console.log(req.body);
     const newTodo = req.body;
@@ -36,5 +37,31 @@ router.post('/', (req, res) => {
     res.redirect('/todos');
 });
 
+/* DELETE TODOS */
+router.delete('/:id', function(req, res) {
+    data.seededTodos.splice(req.params.id, 1); // remove the item from the array
+
+    res.redirect('/todos');  // redirect back to the index route
+});
+
+/* EDIT TODOS */
+router.get('/:id/edit', (req, res) => {
+    res.render('todos/edit', {
+      todo: {
+        id: req.params.id,
+        description: data.seededTodos[req.params.id].description,
+        urgent: data.seededTodos[req.params.id].urgent,
+      }
+    });
+  });
+/* UPDATE TODOS */
+  router.put('/:id', (req, res) => {
+    var todoToEdit = data.seededTodos[req.params.id];
+  
+    todoToEdit.description = req.body.description;
+    todoToEdit.urgent = req.body.urgent;
+  
+    res.redirect('/todos');
+  })
 
   module.exports = router;

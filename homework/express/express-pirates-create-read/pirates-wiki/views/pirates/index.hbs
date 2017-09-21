@@ -1,8 +1,12 @@
 <h1> Hello Pirates </h1>
 <ul>
   {{#each pirates}}
-    <li>Name: {{this.name}}</li>
+    <li> <a href="/pirates/{{@index}}">{{name}}</a> </li>
     <br>
+    <div><a href="/pirates/{{@index}}/edit">Edit</a></div>
+    <form action="/pirates/{{@index}}?_method=DELETE" method="POST">
+      <input type="submit" value="DELETE"/>
+    </form>
   {{/each}}
 </ul>
-  
+<a href="/pirates/new">Add A Pirate</a>
