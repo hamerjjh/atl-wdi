@@ -32,7 +32,45 @@ This app provides easy access to all your e-mail service providers in one app. T
 ```
 Write your answer here or in a separate js file.
 ```
+*Data Modeling*
+User = {
+  id number
+  name
+  login
+  email accounts
+  password
+}
+Email Accounts= {
+ id number
+ emails adresss
+ passwords
+}
+*Objects*
+User = {
+  id number: number
+  name: String
+  login: string
+  email accounts: String
+  password: string
+}
+Email Accounts= {
+ id number: number
+ emails adress: "string"
+ passwords: "string"
+}
 
+*Relationship*
+var example user ={
+  id number: 1232
+  name: "Jonathan"
+  login: jj2
+  email accounts: [{
+    id number
+   emails adresss = [{email1, email2, email3}]
+   passwords= [{password1, password2, password3}]
+  }]
+  password: "wdi12"
+}
 ### 2. Radio on the Internet app
 
 This app hosts a ton of radio stations, each featuring their own playlists of songs. The radio stations can be listed by genre or popularity.
@@ -41,6 +79,42 @@ This app hosts a ton of radio stations, each featuring their own playlists of so
 ```
 Write your answer here or in a separate js file.
 ```
+*Data Modeling*
+Radio Stations
+  id number
+  genre
+  popularity
+  playlists
+}
+Playlists= {
+ id number
+ songs
+}
+*Objects*
+Radio Stations = {
+  id number: number
+  genre: string
+  popularity: string
+}
+Playlist= {
+ id number: number
+ songs: string
+}
+
+*Relationship*
+radio stations ={
+  id number: 1232
+  genre: [{
+    pop, rap, country, jazz
+  }]
+  popularity: [{
+    1,2,3,4,5,6,7,8,9,10
+  }]
+  playlists: [{
+    id number: 12414
+ songs: song1, song2, song3, song4
+  }]
+}
 
 ### 3. Rock Concert App
 
@@ -49,10 +123,97 @@ This app will be a tool for managing all of your favorite bands' concerts; it wi
 ```
 Write your answer here or in a separate js file.
 ```
+*Data Modeling*
+Band Concerts= {
+  id number
+  tour dates
+  ticket purchasing
+  recommeded show
+  
+}
+Tour dates= {
+ id number
+ dates
+ city
+ time 
+}
+*Objects*
+Band Concerts= {
+  id number: number
+  tour dates: number
+  ticket purchasing: string
+  recommeded show: string
+}
+Tour dates= {
+ id number: number
+ dates: nubmer
+ city: string
+ time: number
+}
+*Relationship*
+var example band concert ={
+  id number: 1232
+  tour dates ={ 
+    id number: 333
+ dates: 7/18/18
+ city: atlanta
+ time: 7:30pm
+  }
+  ticket purchasing={
+    avaliable: yes or no
+    sold out: yes or no
+  }
+  recommeded show= {
+    list of shows
+  }
+  
+}
 
 ### 4. Coffee To-Go App
 
 This app will allow customers to browse a list of coffeeshops nearby, order drinks off of their menu, add those drinks to a shopping cart, and save that cart as a past order once the purchase is complete.
+
+*Data Modeling*
+Coffee Shops= {
+  id number
+  location
+  name  
+  menu
+  shopping cart
+  previous orders
+}
+menu= {
+ id number
+ drinks
+ prices 
+}
+*Objects*
+Coffee Shops= {
+  id number: number
+  location: string
+  name: string
+  menu: string
+  shopping cart: string
+  previous orders: string
+}
+menu= {
+ id number: number
+ drinks: string
+ prices: number
+}
+*Relationship*
+var example coffee shops ={
+  id number: 1232
+  location: '123 fake street"  
+  name: "coffee guru"
+  menu =[{
+  id number: 333
+  drinks= {drink1, drink2, drink3, drink4} 
+  prices= {price1, price2, price3, price4}
+  shopping cart= {drink1 & price1}
+  previous orders= {drink3 & price3}
+  
+}
 
 ### 5. Team Tracker App
 
@@ -61,6 +222,48 @@ This app shows you all the latest stats from your favorite sports teams. You can
 ```
 Write your answer here or in a separate js file.
 ```
+*Data Modeling*
+Sports Stats= {
+  id number
+  individual stats
+  team stats
+}
+individual stats= {
+ id number
+ points
+ assists
+ rebounds
+ steals
+}
+*Objects*
+Sports Stats= {
+  id number: number
+  individual stats: number
+  team stats: number
+}
+individual stats= {
+ id number: number
+ points: number
+ assists: mumber
+ rebounds: number
+ steals: number
+}
+*Relationship*
+var example Sports Stats={
+  id number: 1232
+  individual stats= {[
+    points:12
+    assists:5
+    rebounds:6
+    steals:2
+  ]}
+  team stats={
+    total points
+    total assists
+    total rebounds
+    total assists
+  }
+}
 
 
 ### Final Thoughts:
@@ -70,6 +273,7 @@ Q. When you were creating relationships between the models, what were some thoug
 ```
 Write your answer here or in a separate js file.
 ```
+When creating relationships between the models I really had to think what tied the two models together. In addtion when tying the two models together I had to remember to had sub categories.
 
 ### Reading and Videos for Tomorrow
 Now that you've had some practice really thinking about the data design of an app, we're going to learn about MongoDB, a no-SQL database. Starting tomorrow, our Express apps will be talking to the Mongo database through Mongoose. Since we're covering a LOT of ground tomorrow, take some time to introduce yourself to concepts and lingo surrounding MongoDB and Mongoose. You will _not_ have to memorize the technical details here.
