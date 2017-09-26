@@ -10,7 +10,7 @@ var methodOverride = require("method-override");
 var hbs = require("hbs");
 var logger = require('morgan');
 
-
+mongoose.connect('mongodb://localhost/donut_store');
 //======================
 // MIDDLEWARE
 //======================
@@ -21,6 +21,7 @@ app.use(methodOverride("_method"));
 
 app.set("view engine", "hbs");
 app.set('views', './views');
+const db = mongoose.connection;
 
 app.use(express.static(__dirname + 'public'));
 app.use( logger('dev'));
@@ -43,3 +44,8 @@ app.use('/', donutsController);
 
 
 //CREATE THE MONGOOSE CONNECTION and SET APP TO LISTEN to 3000
+// Start Server
+const port = 3000;
+app.listen(port, () => {
+    console.log(`Express started on ${port}`)
+})
