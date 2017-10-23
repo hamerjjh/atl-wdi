@@ -11,3 +11,7 @@ puts "|c| was here"
 end
 
 #3 
+d = Fixnum 
+e = Float
+d = e 
+
