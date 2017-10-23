@@ -22,3 +22,10 @@ likesTo = "long walks on the beach, kinda"
 do
 "christine + "and" + likesTo"
 end
+
+#5
+
+def program
+    @input "input an Interger" this.chop ["name", "what they like"]
+    @output "name" + "what they like"
+end
