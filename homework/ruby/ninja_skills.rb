@@ -15,3 +15,10 @@ d = Fixnum
 e = Float
 d = e 
 
+#4
+christine = "Hi, I'm Christine"
+likesTo = "long walks on the beach, kinda"
+
+do
+"christine + "and" + likesTo"
+end
